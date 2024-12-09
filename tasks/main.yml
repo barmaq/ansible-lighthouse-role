@@ -8,6 +8,7 @@
     state: present
 
 - name: Install Nginx
+  become: true
   ansible.builtin.apt:
     name: nginx
     state: present
@@ -22,6 +23,7 @@
 
 - block:
     - name: Configure Nginx for LightHouse
+      become: true
       template:
         src: templates/nginx-lighthouse.conf.j2
         dest: /etc/nginx/conf.d/lighthouse.conf
@@ -29,6 +31,7 @@
 
     - name: Clone LightHouse repository into the target directory
       ansible.builtin.git:
+      become: true
         repo: https://github.com/VKCOM/lighthouse.git
         dest: /var/www/lighthouse
         version: master
