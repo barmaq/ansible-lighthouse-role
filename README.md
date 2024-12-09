@@ -1,7 +1,7 @@
 Lighthouse
 =========
 
-Эта роль установит lighthouse на debian\ubuntu
+Эта роль установит Nginx и lighthouse на debian\ubuntu
 
 
 Пример Playbook
